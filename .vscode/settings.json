@@ -1,0 +1,8 @@
+{
+    "python.condaPath": "/home/chuhw/anaconda3",
+    "python.pythonPath":"/home/chuhw/anaconda3/envs/cv/bin/python",
+    "python.linting.pylintArgs": [
+        // "--disable=F0401"
+        "--disable=E0401"
+    ]
+}
