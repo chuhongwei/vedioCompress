@@ -1,4 +1,4 @@
-从哦"""
+"""
 Augmenters that apply affine transformations.
 
 To use the augmenters, clone the complete repo and use

@@ -10,8 +10,8 @@ def load_one_img(path):
     image_list = []
     for i in range(1):
         # img = Image.open(path).convert('RGB')
-
-        img = Image.open(path).convert('HSV')
+        
+        # img = Image.open(path).convert('HSV')
         image_list.append(img)
     return np.stack(image_list)
 
@@ -38,16 +38,16 @@ def save_video(video, output_path):
         writer.writeFrame(frame)
 
 
-def augment_one_img(path):
-    img = load_one_img(path)
+def augment_one_img(img):
+    img = np.stack([Image.fromarray(img).convert('HSV')])
     img = augmentation(img)
     return img[0]
 
 
 if __name__ == '__main__':
-    dir = '/home/chuhw/CV/DVC/TestDemo/VideoCodec/image/im001.png'
-    output_path = '/home/chuhw/CV/DVC/TestDemo/VideoCodec/image/im0011.png'
-    res=augment_one_img(dir)
+    dir = '/home/awiny/chw/cv/vedioCompress/TestDemo/VideoCodec/image/Iframe.png'
+    output_path = '/home/awiny/chw/cv/vedioCompress/TestDemo/VideoCodec/image/Iframe1.png'
+    res=augment_one_img(cv2.imread(dir))
     cv2.imwrite(output_path,res)
 
     # video = load_one_img(dir)
